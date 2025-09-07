@@ -1,4 +1,5 @@
 import reactImg from "./assets/react-core-concepts.png";
+import componentImg from "./assets/components.png";
 
 const reactDescriptions = ['Fundamental', 'Learnable', 'Practical'];
 
@@ -21,12 +22,37 @@ function Header() {
   );
 }
 
+function CoreConcept(props){
+  return (
+  <li>
+    <img src={props.image} alt={props.title}/>
+    <h3>{props.title}</h3>
+    <p>{props.description}</p>
+  </li>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+        <h2>Core Concepts</h2>
+        <ul>
+          <CoreConcept 
+            title= "Components" 
+            description= "The core UI building block."
+            image= {componentImg}
+          />
+          <CoreConcept
+            title= "Props"
+            description = "A way to pass data from a parent component to a child component."
+             />
+          <CoreConcept />
+          <CoreConcept />
+        </ul>
+        </section>
       </main>
     </div>
   );
